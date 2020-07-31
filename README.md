@@ -30,3 +30,7 @@ This step requires the Go SDK.
 ## run
 
     GOOGLE_APPLICATION_CREDENTIALS=service-account-key.json gspeech -p -i welcome.ssml
+
+## about ssml
+
+https://cloud.google.com/text-to-speech/docs/ssml
