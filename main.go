@@ -15,8 +15,8 @@ import (
 	texttospeechpb "google.golang.org/genproto/googleapis/cloud/texttospeech/v1"
 )
 
-var oPlay = flag.Bool("p", false, "also play the result")
-var oInput = flag.String("i", "", "text file name")
+var oPlay = flag.Bool("p", false, "also play the result next to generating the MP3")
+var oInput = flag.String("i", "", "text or ssml file name")
 var oGender = flag.String("g", "female", "male|female|neutral")
 var oVoice = flag.String("v", "en-AU-Wavenet-C", "pick a voice from https://cloud.google.com/text-to-speech/docs/voices")
 var oLang = flag.String("l", "en-AU", "English (Austrialia)")
