@@ -5,8 +5,8 @@ Simple tool that uses the Google Text-to-Speech API
 ## requirements
 
 - GCP project with Text-to-Speech API enabled
-- Create a Serviceaccount with Owner permissions :-(
-- Generate and download an API key for this service account (call it service-account-key.json)
+- Create a Serviceaccount with Owner permissions (not sure if still the case in 2024)
+- Generate and download an API key for this service account (call it gspeech.json)
 
 ## install
 
@@ -29,8 +29,10 @@ This step requires the Go SDK.
 
 ## run
 
-    GOOGLE_APPLICATION_CREDENTIALS=service-account-key.json gspeech -p -i welcome.ssml
+    GOOGLE_APPLICATION_CREDENTIALS=$HOME/gspeech.json gspeech -p -i welcome.ssml
 
 ## about ssml
 
 https://cloud.google.com/text-to-speech/docs/ssml
+
+2020 MIT License. https://ernestmicklei.com
