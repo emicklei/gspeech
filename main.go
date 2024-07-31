@@ -5,14 +5,13 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
 	"strings"
 
 	texttospeech "cloud.google.com/go/texttospeech/apiv1"
-	texttospeechpb "google.golang.org/genproto/googleapis/cloud/texttospeech/v1"
+	"cloud.google.com/go/texttospeech/apiv1/texttospeechpb"
 )
 
 var oPlay = flag.Bool("p", false, "also play the result next to generating the MP3")
@@ -28,7 +27,7 @@ func main() {
 		os.Exit(0)
 	}
 	inputName := *oInput
-	content, err := ioutil.ReadFile(inputName)
+	content, err := os.ReadFile(inputName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -90,7 +89,7 @@ func main() {
 	}
 
 	// The resp's AudioContent is binary.
-	err = ioutil.WriteFile(outputName, resp.AudioContent, 0644)
+	err = os.WriteFile(outputName, resp.AudioContent, 0644)
 	if err != nil {
 		log.Fatal(err)
 	}

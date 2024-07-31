@@ -2,10 +2,7 @@ module github.com/emicklei/gspeech
 
 go 1.22
 
-require (
-	cloud.google.com/go/texttospeech v1.7.11
-	google.golang.org/genproto v0.0.0-20240730163845-b1a4ccb954bf
-)
+require cloud.google.com/go/texttospeech v1.7.11
 
 require (
 	cloud.google.com/go v0.115.0 // indirect
